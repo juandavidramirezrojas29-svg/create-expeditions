@@ -1,0 +1,45 @@
+modLoader = "neoforge"
+loaderVersion = "[21,)"
+license = "MIT"
+issueTrackerURL = "https://github.com/craftworkgames/create-expeditions/issues"
+
+[[mods]]
+modId = "expeditions"
+displayName = "Create: Expeditions"
+logoFile = "assets/expeditions/logo.png"
+credits = "Development Team"
+authors = "CraftworkGames"
+description = """
+A comprehensive exploration and adventure mod for Minecraft that complements Create and Aeronautics.
+Featuring new dimensions, structures, enemies, weapons, and deep Create integration.
+"""
+version = "0.1.0"
+displayURL = "https://github.com/craftworkgames/create-expeditions"
+
+[[dependencies.expeditions]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.21.1,1.22)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.expeditions]]
+modId = "neoforge"
+mandatory = true
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.expeditions]]
+modId = "create"
+mandatory = false
+versionRange = "[0.5.1,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.expeditions]]
+modId = "aeronautics"
+mandatory = false
+versionRange = "[0.1,)"
+ordering = "AFTER"
+side = "BOTH"
