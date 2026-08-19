@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up JDK 21
         uses: actions/setup-java@v5
         with:
@@ -17,7 +17,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
       - name: Upload JAR as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: create-expeditions-jar
           path: build/libs/create-expeditions-0.1.0.jar
