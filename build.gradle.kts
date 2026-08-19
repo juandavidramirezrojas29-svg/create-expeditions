@@ -8,6 +8,14 @@ base.archivesName = "create-expeditions"
 
 repositories {
     mavenCentral()
+    maven {
+        name = "NeoForged"
+        url = uri("https://maven.neoforged.net/releases/")
+    }
+    maven {
+        name = "Minecraft Forge"
+        url = uri("https://maven.minecraftforge.net/")
+    }
 }
 
 java {
@@ -19,7 +27,11 @@ java {
 }
 
 dependencies {
-    // Empty for now - this is a base mod skeleton
+    // NeoForge API for 1.21.1
+    compileOnly("net.neoforged:neoforge-api:21.1.0")
+    
+    // Minecraft 1.21.1 (for compilation only)
+    compileOnly("net.neoforged.fancymodloader:neoforgeflame:21.1.0")
 }
 
 tasks.withType(JavaCompile::class) {
@@ -30,4 +42,4 @@ tasks.jar {
     from("src/main/resources/")
 }
 
-println("✅ Gradle build configured for Create: Expeditions Mod")
+println("✅ Gradle configured for NeoForge 1.21.1")
