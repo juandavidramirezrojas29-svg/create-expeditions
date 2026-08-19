@@ -1,6 +1,5 @@
 plugins {
     id("java")
-    id("net.neoforged.gradle.userdev") version "7.0.+"
 }
 
 group = "com.craftworkgames"
@@ -9,34 +8,26 @@ base.archivesName = "create-expeditions"
 
 repositories {
     mavenCentral()
-    maven("https://maven.neoforged.net/releases/")
-    maven("https://maven.parchmentmc.org")
-    maven("https://maven.minecraftforge.net/")
 }
 
 java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
-minecraft {
-    version = "1.21.1"
-}
-
 dependencies {
-    // NeoForge
-    implementation("net.neoforged:neoforge:21.1.+")
-    
-    // Create (compatible con 1.21.1)
-    compileOnly("com.simibubi.create:create:0.5.1-mc1.21.1")
-    
-    // Para evitar problemas de compilación si Create no está
-    runtimeOnly("com.simibubi.create:create:0.5.1-mc1.21.1")
+    // Empty for now - this is a base mod skeleton
 }
 
 tasks.withType(JavaCompile::class) {
     options.encoding = "UTF-8"
 }
 
-println("Gradle configuration loaded for NeoForge 1.21.1")
+tasks.jar {
+    from("src/main/resources/")
+}
+
+println("✅ Gradle build configured for Create: Expeditions Mod")
